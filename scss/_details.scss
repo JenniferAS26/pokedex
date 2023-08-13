@@ -1,0 +1,92 @@
+@use "variables" as v;
+
+.details-container {
+    width: 100%;
+    height: 400px;
+    display: none;
+    align-content: space-between;
+    justify-items: center;
+    margin: 20px 0;
+    position: relative;
+    &__title {
+        width: 300px;
+        height: 40px;
+        background-color: v.$secondary-color;
+        border-radius: 20px;
+        display: grid;
+        align-items: center;
+        h2 {
+            text-align: center;
+            text-transform: uppercase;
+            color: v.$white;
+        }
+        @media (min-width: 750px) {
+            width: 320px;
+        }
+    }
+    img {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        bottom: 170px;
+        object-fit: cover;
+        @media (min-width: 750px) {
+            width: 300px;
+            height: 300px;
+            top: calc(50% - 150px);
+            left: calc(50% / 2 - 150px);
+        }
+    }
+    &__details {
+        width: 300px;
+        height: 200px;
+        background-color: v.$secondary-color;
+        border-radius: 13px;
+        display: grid;
+        align-items: center;
+        padding: 15px;
+        &--spec {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-evenly;
+            span {
+                display: block;
+                width: 80px;
+                font-weight: v.$bold-weight;
+                color: v.$white;
+                text-transform: uppercase;
+                text-align: left;
+                letter-spacing: 1px;
+                @media (min-width: 750px) {
+                    width: 100%;
+                    display: grid;
+                    justify-items: center;
+                }
+
+            }
+            @media (min-width: 750px) {
+                display: grid;
+            }
+        }
+        @media (min-width: 750px) {
+            width: 100%;
+            height: 400px;
+            padding: 0;
+            grid-template-columns: repeat(2, 1fr);
+            span:nth-child(1) {
+                font-size: 26px;
+            }
+            span:nth-child(2) {
+                font-size: 20px;
+                justify-self: center;
+            }
+        }
+    }
+    @media (min-width: 750px) {
+        max-width: 750px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        margin: 20px auto;
+    }
+}
